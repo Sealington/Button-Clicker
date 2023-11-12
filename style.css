@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Linefont:wght@100&display=swap'); /* We don't use it, but it's cool */
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+html {
+  padding: 10px;
+  background-color: #c4d8ed44;
+}
+
+#butt {
+  /* Button */
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.click {
+  /* Upgrade Buttons */
+  background-color: #4f9ecf; /* Background */
+  color: #dbf4ff; /* Text */
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.count {
+  /* Counter */
+  font-family: 'Gabarito', sans-serif;
+  font-size: 30px;
+  color: #687ea1;
+}
+
+/*
+This is just good hex colors.
+#5984 - mint green but darker, beautiful.
+#3994 - cool modern cyan but dark.
+*/
+
+.bps {
+  background-color: #6b4fcf; /* Background */
+  color: #e1dbff; /* Text */
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.res {
+  background-color: #c94a4a;
+  color: #462b2b;
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  font-size: 15px;
+}
