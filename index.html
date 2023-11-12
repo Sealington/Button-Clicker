@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <br><center><button onClick="c();"><img id="butt" src="wuerwerwer.webp"></button></center>
+    <center><p class="count" id="button">0</p></center>
+    <button data-inline="true" onClick="p1();" class="click">+1 BPC | 50</button>
+    <button data-inline="true" onClick="p2();" class="click">+4 BPC | 150</button>
+    <button data-inline="true" onClick="p3();" class="click">+6 BPC | 250</button><br><br>
+    <button data-inline="true" onClick="p4();" class="click">+8 BPC | 350</button>
+    <button data-inline="true" onClick="p5();" class="click">+10 BPC | 500</button>
+    <button data-inline="true" onClick="p6();" class="click">+20 BPC | 1000</button><br><br>
+    <button data-inline="true" onClick="p7();" class="click">+25 BPC | 1250</button>
+    <button data-inline="true" onClick="p8();" class="click">+30 BPC | 1500</button>
+    <button data-inline="true" onClick="p9();" class="click">+35 BPC | 1750</button><br><br>
+    <button data-inline="true" onClick="p10();" class="click">+40 BPC | 2000</button>
+    <button data-inline="true" onClick="p11();" class="click">+45 BPC | 2250</button>
+    <button data-inline="true" onClick="p12();" class="click">+50 BPC | 2500</button><br><br>
+    <button data-inline="true" onClick="p13();" class="click">+55 BPC | 2750</button>
+    <button data-inline="true" onClick="p14();" class="click">+60 BPC | 3000</button>
+    <button data-inline="true" onClick="p15();" class="click">+65 BPC | 3250</button><br><br>
+    <button data-inline="true" onClick="p16();" class="click">+70 BPC | 3500</button>
+    <button data-inline="true" onClick="p17();" class="click">+75 BPC | 3750</button>
+    <button data-inline="true" onClick="p18();" class="click">+80 BPC | 4000</button><br><br>
+    <button data-inline="true" onClick="p19();" class="click">+85 BPC | 4250</button>
+    <button data-inline="true" onClick="p20();" class="click">+90 BPC | 4500</button>
+    <button data-inline="true" onClick="p21();" class="click">+95 BPC | 4750</button><br><br>
+    <button data-inline="true" onClick="p22();" class="click">+100 BPC | 5000</button>
+    <button data-inline="true" onClick="p23();" class="click">+105 BPC | 5250</button>
+    <button data-inline="true" onClick="p24();" class="click">+110 BPC | 5500</button><br><br>
+    <button data-inline="true" onClick="p25();" class="click">+115 BPC | 5750</button>
+    <button data-inline="true" onClick="p26();" class="click">+120 BPC | 6000</button>
+    <hr><br> <!-- BPS Starts Here -->
+    <button class="bps" data-inline="true" onClick="cs1();">+1 BPS | 100</button>
+    <button class="bps" data-inline="true" onClick="cs2();">+5 BPS | 450</button>
+    <button class="bps" data-inline="true" onClick="cs3();">+10 BPS | 1000</button><br><br>
+    <hr><br>
+    <button class="res" onClick="restart();"><b>Restart</b></button>
+  </body> <!-- Body -->
+  <script>
+    var b = 0; // buttons
+    var bpc = 1; // buttons per click
+    var bps = 0; // buttons per second
+    var s1;
+    var s2;
+    var s3;
+    var s4;
+    var s5;
+    var s6;
+    var s7;
+    var s8;
+    var s9;
+    var s10;
+    
+    // ===== Prices =====
+    // var b1 = 50;
+    // var b2 = 150;
+    // var b3 = 250;
+    // var b4 = 350;
+    // var b5 = 500;
+    // var b6 = 1000;
+    // var b7 = 1250;
+    // var b8 = 1500;
+    // var b9 = 1750;
+    // var b10 = 2000;
+    // ===== Prices =====
+
+    function cs1() {
+      if (b < 100) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 100) {
+        s1 = true;
+        bps = bps + 1;
+        b = b - 100;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function cs2() {
+      if (b < 450) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 450) {
+        var s2 = true;
+        bps = bps + 5;
+        b = b - 450;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function cs3() {
+      if (b < 1000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 1000) {
+        var s3 = true;
+        bps = bps + 10;
+        b = b - 1000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+    
+    // =====BPS=====
+    function cps() {
+      b = b + bps;
+      document.getElementById("button").innerHTML = b;
+    }
+
+    var l = setInterval(function() {
+      if (s1 == true) {
+        cps();
+      } else {
+        var b = 0;
+      }
+    },1000 );
+    // =====/BPS=====
+    
+    function c() {
+      // click
+      b += bpc;
+      document.getElementById("button").innerHTML = b;
+    }
+    
+    function p1() {
+      if (b < 50) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 50) {
+        var b1 = true;
+        bpc = bpc + 1;
+        b = b - 50;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p2() {
+      if (b < 150) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 150) {
+        var b2 = true;
+        bpc = bpc + 4;
+        b = b - 150;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p3() {
+      if (b < 250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 250) {
+        var b3 = true;
+        bpc = bpc + 6;
+        b = b - 250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p4() {
+      if (b < 350) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 350) {
+        var b4 = true;
+        bpc = bpc + 8;
+        b = b - 350;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p5() {
+      if (b < 500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 500) {
+        var b5 = true;
+        bpc = bpc + 10;
+        b = b - 500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p6() {
+      if (b < 1000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 1000) {
+        var b6 = true;
+        bpc = bpc + 20;
+        b = b - 1000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p7() {
+      if (b < 1250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 1250) {
+        var b7 = true;
+        bpc = bpc + 25;
+        b = b - 1250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p8() {
+      if (b < 1500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 1500) {
+        var b8 = true;
+        bpc = bpc + 30;
+        b = b - 1500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p9() {
+      if (b < 1750) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 1750) {
+        var b9 = true;
+        bpc = bpc + 35;
+        b = b - 1750;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p10() {
+      if (b < 2000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 2000) {
+        var b10 = true;
+        bpc = bpc + 40;
+        b = b - 2000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p11() {
+      if (b < 2250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 2250) {
+        var b11 = true;
+        bpc = bpc + 45;
+        b = b - 2250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p12() {
+      if (b < 2500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 2500) {
+        var b12 = true;
+        bpc = bpc + 50;
+        b = b - 2500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p13() {
+      if (b < 2750) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 2750) {
+        var b13 = true;
+        bpc = bpc + 55;
+        b = b - 2750;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p14() {
+      if (b < 3000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 3000) {
+        var b14 = true;
+        bpc = bpc + 60;
+        b = b - 3000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p15() {
+      if (b < 3250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 3250) {
+        var b15 = true;
+        bpc = bpc + 65;
+        b = b - 3250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p16() {
+      if (b < 3500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 3500) {
+        var b16 = true;
+        bpc = bpc + 70;
+        b = b - 3500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p17() {
+      if (b < 3750) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 3750) {
+        var b17 = true;
+        bpc = bpc + 75;
+        b = b - 3750;
+      }
+    }
+
+    function p18() {
+      if (b < 4000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 4000) {
+        var b16 = true;
+        bpc = bpc + 80;
+        b = b - 4000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p19() {
+      if (b < 4250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 4250) {
+        var b19 = true;
+        bpc = bpc + 85;
+        b = b - 4250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p20() {
+      if (b < 4500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 4500) {
+        var b20 = true;
+        bpc = bpc + 90;
+        b = b - 4500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p21() {
+      if (b < 4750) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 4750) {
+        var b21 = true;
+        bpc = bpc + 95;
+        b = b - 4750;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p22() {
+      if (b < 5000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 5000) {
+        var b22 = true;
+        bpc = bpc + 100;
+        b = b - 5000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p23() {
+      if (b < 5250) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 5250) {
+        var b23 = true;
+        bpc = bpc + 105;
+        b = b - 5250;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p24() {
+      if (b < 5500) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 5500) {
+        var b24 = true;
+        bpc = bpc + 110;
+        b = b - 5500;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p25() {
+      if (b < 5750) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 5750) {
+        var b25 = true;
+        bpc = bpc + 115;
+        b = b - 5750;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function p26() {
+      if (b < 6000) {
+        alert ("Not enough button to buy this.");
+      } else if (b >= 6000) {
+        var b26 = true;
+        bpc = bpc + 120;
+        b = b - 6000;
+        document.getElementById("button").innerHTML = b;
+      }
+    }
+
+    function restart() {
+      b = 0;
+      document.getElementById("button").innerHTML = b;
+      bpc = 1;
+      bps = 0;
+      b1 = false;
+      b2 = false;
+      b3 = false;
+      b4 = false;
+      b5 = false;
+      b6 = false;
+      b7 = false;
+      b8 = false;
+      b9 = false;
+      b10 = false;
+      b11 = false;
+      b12 = false;
+      b13 = false;
+      b14 = false;
+      b15 = false;
+      b16 = false;
+      b17 = false;
+      b18 = false;
+      b19 = false;
+      b20 = false;
+      b21 = false;
+      b22 = false;
+      b23 = false;
+      b24 = false;
+      b25 = false;
+      b26 = false;
+      s1 = false;
+      s2 = false;
+      s3 = false;
+      document.getElementById("button").innerHTML = b;
+    }
+  </script> <!-- Main Script -->
+</html>
